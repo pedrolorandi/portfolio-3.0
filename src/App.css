@@ -1,0 +1,38 @@
+:root {
+  /* Define slider dimensions and centering calculations */
+  --width: 250px; /* Slider width */
+  --aspect-ratio: calc(9 / 16); /* Aspect ratio for 16:9 */
+  --height: calc(var(--width) * var(--aspect-ratio)); /* Slider height */
+  --half-width: calc(var(--width) / 2); /* Half width for centering */
+}
+
+.banner {
+  border: 1px solid red;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .slider {
+  border: 1px solid blue;
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  top: 10%;
+  left: calc(50% - var(--half-width));
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0;
+}
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
